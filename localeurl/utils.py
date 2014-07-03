@@ -62,7 +62,7 @@ def locale_path(path, locale=''):
     elif is_default_locale(locale) and not localeurl_settings.PREFIX_DEFAULT_LOCALE:
         return path
     else:
-        return ''.join([u'/', locale, path])
+        return ''.join(['/', locale, path])
 
 def locale_url(path, locale=''):
     """

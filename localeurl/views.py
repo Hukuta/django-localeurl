@@ -1,4 +1,4 @@
-from urlparse import urlsplit
+from urllib.parse import urlsplit
 from django import http
 from django.utils.translation import check_for_language
 from localeurl import utils

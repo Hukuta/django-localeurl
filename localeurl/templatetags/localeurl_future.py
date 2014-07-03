@@ -8,7 +8,7 @@ warnings.warn(
 
 from django import template
 
-from localeurl_tags import locale_url
+from .localeurl_tags import locale_url
 
 
 register = template.Library()

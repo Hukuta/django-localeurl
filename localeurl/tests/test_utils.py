@@ -3,9 +3,9 @@ Test utilities.
 
 """
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 from django.conf import settings as django_settings
 from django.core.handlers.wsgi import WSGIRequest
@@ -34,14 +34,14 @@ class TestSettingsManager(object):
 
 
     def set_from_dict(self, settings):
-        for k,v in settings.iteritems():
+        for k,v in settings.items():
             self._original_settings.setdefault(k,
                     getattr(self._settings, k, NO_SETTING))
             setattr(self._settings, k, v)
 
 
     def revert(self):
-        for k,v in self._original_settings.iteritems():
+        for k,v in self._original_settings.items():
             if v == NO_SETTING:
                 try:
                     delattr(self._settings, k)
